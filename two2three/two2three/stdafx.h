@@ -24,8 +24,12 @@ inline void assign(double*** &field,int h,int w,int depth)
 	for (int i = 0;i<h;i++)
 		field[i] = new double*[w];
 	for (int i = 0;i<h;i++)
-		for (int j = 0;j<w;j++)
-			field[i][j] = new double[depth];
+	for (int j = 0; j < w; j++)
+	{
+		field[i][j] = new double[depth];
+		for (int k = 0; k < depth; k++)
+			field[i][j][k] = 0;
+	}
 }
 inline void release(double*** &field,int h,int w,int depth)
 {

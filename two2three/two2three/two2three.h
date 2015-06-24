@@ -9,7 +9,9 @@ public:
 	two t2; 
 	void rotation_velocity(double** u2, double** v2, double *** u3, double *** v3, double*** w3);
 	Param param;
-	vector<double**> density;
+	vector<double***> density;
 	void initialize();
-	void addSource(double***);
+	void advect(double*** field, double*** u, double*** v, double***w, double*** new_field,double dt);
+	void advect_simple(double*** field, double*** u, double*** v, double***w, double*** new_field,double dt);
+	void addSource(double***,double***);
 };
